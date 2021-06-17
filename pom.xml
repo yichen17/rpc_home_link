@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>2.2.4.RELEASE</version>
+        <relativePath/> <!-- lookup parent from repository -->
+    </parent>
+    <groupId>com.yichen</groupId>
+    <artifactId>eat</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+    <name>eat</name>
+    <packaging>pom</packaging>
+    <description>About the food you like to eat</description>
+    <modules>
+        <module>mybatis-generator</module>
+        <module>provider</module>
+        <module>comsumer</module>
+        <module>core</module>
+        <module>protocol</module>
+        <module>register</module>
+        <module>facade</module>
+    </modules>
+    <properties>
+        <springboot.version>2.2.4.RELEASE</springboot.version>
+        <java.version>1.8</java.version>
+        <mysql.connector.java>8.0.19</mysql.connector.java>
+        <mybatis.spring.boot.starter>2.1.0</mybatis.spring.boot.starter>
+        <lombok>1.18.2</lombok>
+    </properties>
+    <!--
+    进行统一版本管理，父项目需要指定版本号，且通过使用  dependencyManagement 来设定。 没增加子项目需要在modules中添加
+    父项目中的依赖必须是多个项目公用的，不然还是写在需要的子项目的pom中
+
+    子项目则需要修改默认的父项目，指向当前的父项目而不是默认的springboot，子项目不在需要设定依赖的版本。
+
+    -->
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.projectlombok</groupId>
+                <artifactId>lombok</artifactId>
+                <version>${lombok}</version>
+            </dependency>
+            <!--springboot 相关的-->
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-starter</artifactId>
+                <version>${springboot.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-starter-test</artifactId>
+                <scope>test</scope>
+                <version>${springboot.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>mysql</groupId>
+                <artifactId>mysql-connector-java</artifactId>
+                <version>${mysql.connector.java}</version>
+            </dependency>
+
+            <!--开发需要的maven 依赖-->
+            <dependency>
+                <groupId>org.mybatis.spring.boot</groupId>
+                <artifactId>mybatis-spring-boot-starter</artifactId>
+                <version>${mybatis.spring.boot.starter}</version>
+            </dependency>
+
+        </dependencies>
+    </dependencyManagement>
+
+
+
+</project>
