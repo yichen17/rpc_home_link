@@ -1,4 +1,6 @@
-package com.yichen.protocol;
+package com.yichen.core.common;
+
+import lombok.Data;
 
 /**
  * @author Qiuxinchao
@@ -6,11 +8,12 @@ package com.yichen.protocol;
  * @date 2021/6/17 14:57
  * @describe  相应结果   存在两种请求，请求成功和请求失败。 两种状态区别由消息头中的status 辨别。
  */
+@Data
 public class MiniResponse {
     /**
      * 请求结果
      */
-    private String data;
+    private Object data;
     /**
      * 错误内容
      */
