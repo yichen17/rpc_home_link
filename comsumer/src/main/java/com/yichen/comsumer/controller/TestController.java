@@ -22,7 +22,7 @@ public class TestController {
     private static Logger logger= LoggerFactory.getLogger(TestController.class);
 
     @SuppressWarnings({"SpringJavaAutowiredFieldsWarningInspection", "SpringJavaInjectionPointsAutowiringInspection"})
-    @RpcReference(serviceVersion = "1.0", timeout = 3000)
+    @RpcReference(timeout = 3000)
     private CookFoodFacade service;
 
     @RequestMapping("/add")

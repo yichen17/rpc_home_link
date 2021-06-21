@@ -2,6 +2,8 @@ package com.yichen.core.common;
 
 import lombok.Data;
 
+import java.io.Serializable;
+
 /**
  * @author Qiuxinchao
  * @version 1.0
@@ -9,7 +11,7 @@ import lombok.Data;
  * @describe  请求内容   由于是rpc调用，故需要确定  类.方法(参数类型：参数)：版本 才能最终确定 调用的方法。
  */
 @Data
-public class MiniRequest {
+public class MiniRequest implements Serializable {
     /**
      * 服务版本
      */

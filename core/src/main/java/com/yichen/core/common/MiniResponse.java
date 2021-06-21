@@ -2,6 +2,8 @@ package com.yichen.core.common;
 
 import lombok.Data;
 
+import java.io.Serializable;
+
 /**
  * @author Qiuxinchao
  * @version 1.0
@@ -9,7 +11,7 @@ import lombok.Data;
  * @describe  相应结果   存在两种请求，请求成功和请求失败。 两种状态区别由消息头中的status 辨别。
  */
 @Data
-public class MiniResponse {
+public class MiniResponse implements Serializable {
     /**
      * 请求结果
      */

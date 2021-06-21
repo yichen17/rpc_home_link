@@ -11,6 +11,7 @@ import org.springframework.context.annotation.ComponentScan;
 @SpringBootApplication
 @MapperScan("com.yichen.cook.food.dao")
 @ComponentScan("com.yichen.cook.food.controller")
+@ComponentScan({"com.yichen.cook.food","com.yichen.provider"})
 public class ProviderApplication {
 
 	public static void main(String[] args) {
