@@ -22,7 +22,7 @@ public class TestController {
     private static Logger logger= LoggerFactory.getLogger(TestController.class);
 
     @SuppressWarnings({"SpringJavaAutowiredFieldsWarningInspection", "SpringJavaInjectionPointsAutowiringInspection"})
-    @RpcReference(timeout = 3000)
+    @RpcReference(timeout = 3000 ,registryAddress = "152.136.237.34:2181")
     private CookFoodFacade service;
 
     @RequestMapping("/add")
@@ -32,4 +32,11 @@ public class TestController {
         service.add(steps);
         return "add success";
     }
+    @RequestMapping("/get")
+    @ResponseBody
+    public String getFoodCookSteps(int id){
+        logger.info("test controller getFoodCookSteps method parameters :{}",id);
+        return service.getFoodCookStepsById(id).toString();
+    }
+
 }

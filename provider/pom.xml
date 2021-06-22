@@ -21,6 +21,12 @@
 			<artifactId>mybatis-spring-boot-starter</artifactId>
 		</dependency>
 
+		<!--logging 实现接口-->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-logging</artifactId>
+		</dependency>
+
 		<dependency>
 			<groupId>com.yichen</groupId>
 			<artifactId>protocol</artifactId>

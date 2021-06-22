@@ -2,7 +2,7 @@ package com.yichen.serialization;
 
 import com.caucho.hessian.io.HessianSerializerInput;
 import com.caucho.hessian.io.HessianSerializerOutput;
-import com.sun.xml.internal.ws.encoding.soap.SerializationException;
+
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
 

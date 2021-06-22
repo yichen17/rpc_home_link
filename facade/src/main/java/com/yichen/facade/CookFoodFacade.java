@@ -9,5 +9,7 @@ import com.yichen.core.model.foodCookSteps;
  * @describe 远程  服务 暴露的接口
  */
 public interface CookFoodFacade {
-    public int add(foodCookSteps steps);
+    int add(foodCookSteps steps);
+
+    foodCookSteps getFoodCookStepsById(int id);
 }
