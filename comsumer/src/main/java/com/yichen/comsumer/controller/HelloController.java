@@ -24,7 +24,8 @@ public class HelloController {
     public String getFoodCookSteps(HttpServletRequest request){
         logger.info("visit hello controller");
         String ip= IpUtils.getIpAddr(request);
-        return "success,ip is "+ip;
+        logger.info("local port:{},remote port:{},server port:{}",request.getLocalPort(),request.getRemotePort(),request.getServerPort());
+        return "success,ip is "+ip+"port is "+request.getRemotePort();
     }
 
 }
